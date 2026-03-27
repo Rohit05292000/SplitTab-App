@@ -103,22 +103,54 @@ Password: demo123
 
 ```
 src/
-├── api/              # API integrations (currency, location)
-├── store/            # Redux slices and store configuration
-├── types/            # TypeScript type definitions
-├── utils/            # Helper functions and algorithms
-└── app/
-    ├── components/   # React components (< 300 lines each)
-    │   ├── auth/
-    │   ├── common/
-    │   ├── groups/
-    │   ├── expenses/
-    │   ├── balances/
-    │   ├── analytics/
-    │   ├── notifications/
-    │   ├── profile/
-    │   └── navigation/
-    └── App.tsx       # Main application
+├── api/
+│   ├── currencyApi.ts
+│   └── locationApi.ts
+
+├── app/
+│   └── AppNavigator.tsx
+
+├── components/
+│   ├── common/
+│   └── notifications/
+
+├── constants/
+│   └── config.ts
+
+├── data/
+
+├── navigation/
+│   ├── BottomTabs.tsx
+│   ├── RootNavigator.tsx
+│   ├── screenTypes.ts
+│   └── types.ts
+
+├── Redux/
+│   ├── Store.ts
+│   ├── authSlice.ts
+│   ├── currencySlice.ts
+│   ├── expensesSlice.ts
+│   ├── groupsSlice.ts
+│   └── settlementsSlice.ts
+
+├── screens/
+│   ├── analytics/
+│   ├── auth/
+│   ├── balances/
+│   ├── expenses/
+│   ├── groups/
+│   ├── home/
+│   ├── notifications/
+│   └── profile/
+
+├── styles/
+│   └── theme.ts
+
+├── types/
+│   └── index.ts
+
+└── utils/
+
 ```
 
 ## 🏗️ Architecture
@@ -142,14 +174,6 @@ npm test
 # Run specific test file
 npm test balanceCalculator.test.ts
 
-
-# Install dependencies
-pnpm install
-# OR
-npm install
-
-# Start Metro bundler
-npx react-native start
 
 # Run on Android (in another terminal)
 npx react-native run-android
